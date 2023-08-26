@@ -4,11 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub user search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>html, body, pre, code, kbd, samp {font-family: 'Press Start 2P', cursive;}</style>
     <!-- NESS.css Framework -->
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
 </head>
 <body>
-
+    <div class="nes-container with-title">
+        <p class="title">GitHub user search</p>
+        <form class="nes-field form-container">
+            <label for="name_field">User name</label>
+            <input type="text" id="name_field" class="nes-input">
+            <button type="submit" class="nes-btn" href="#">Normal</button>
+        </form>
+    </div>
+    <div class="nes-container is-rounded">
+        <header>
+            <div class="img">
+                <img src="" alt="" class="img__img">
+            </div>
+            <div class="container">
+                <h1 class="container__name">Ciro Mirkin</h1>
+                <p class="container__user-name">Lorem, ipsum.</p>
+                <p class="container__date">June 12, 2022</p>
+            </div>
+        </header>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <a href="#" class="nes-badge is-splited">
+            <span class="is-dark">Repos</span>
+            <span class="is-primary">32</span>
+        </a>
+        <div class="lists">
+            <ul class="nes-list is-disc">
+              <li>Place: </li>
+              <li>Site: </li>
+            </ul>
+          </div>
+    </div>
     <script type="module" src="./main.js"></script>
 </body>
 </html>
