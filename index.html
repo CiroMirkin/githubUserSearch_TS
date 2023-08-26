@@ -10,38 +10,43 @@
     <style>html, body, pre, code, kbd, samp {font-family: 'Press Start 2P', cursive;}</style>
     <!-- NESS.css Framework -->
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- Own css styles -->
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="nes-container with-title">
-        <p class="title">GitHub user search</p>
-        <form class="nes-field form-container">
-            <label for="name_field">User name</label>
-            <input type="text" id="name_field" class="nes-input">
-            <button type="submit" class="nes-btn" href="#">Normal</button>
-        </form>
-    </div>
-    <div class="nes-container is-rounded">
-        <header>
-            <div class="img">
-                <img src="" alt="" class="img__img">
-            </div>
-            <div class="container">
-                <h1 class="container__name">Ciro Mirkin</h1>
-                <p class="container__user-name">Lorem, ipsum.</p>
-                <p class="container__date">June 12, 2022</p>
-            </div>
-        </header>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <a href="#" class="nes-badge is-splited">
-            <span class="is-dark">Repos</span>
-            <span class="is-primary">32</span>
-        </a>
-        <div class="lists">
-            <ul class="nes-list is-disc">
-              <li>Place: </li>
-              <li>Site: </li>
-            </ul>
-          </div>
+    <div class="page-content">
+        <h1 class="title">GitHub user search</h1>
+        <div class="nes-container">
+            <form class="nes-field form-container">
+                <label for="name_field">User name</label>
+                <input type="text" id="name_field" class="nes-input">
+                <button type="submit" class="nes-btn margin-top">Search</button>
+            </form>
+        </div>
+        <div class="nes-container">
+            <header class="user-information">
+                <div class="img">
+                    <img src="https://avatars.githubusercontent.com/u/107360995?v=4" alt="" class="img__img">
+                </div>
+                <div class="user">
+                    <p class="user__name nes-text is-primary">Ciro Mirkin</p>
+                    <p class="user__user-name">@Loremipsum</p>
+                    <p class="user__date">June 12, 2022</p>
+                    <a href="#" class="user__github-link"><i class="nes-icon github"></i></a>
+                </div>
+            </header>
+            <div class="lists">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <ul class="nes-list is-disc">
+                  <li>Place: </li>
+                  <li>Site: </li>
+                  <li>Twiter: </li>
+                </ul>
+              </div>
+        </div>
+        <footer class="footer-page">
+            <a href="#">GitHub</a>
+        </footer>
     </div>
     <script type="module" src="./main.js"></script>
 </body>

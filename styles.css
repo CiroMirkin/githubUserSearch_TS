@@ -1,0 +1,62 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    display: grid;
+    place-items: center;
+
+}
+
+.margin-top {
+    margin-top: 1rem;
+}
+
+.page-content {
+    max-width: 700px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-information {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 1.5rem;
+}
+.img {
+    width: 10rem;
+    display: grid;
+    place-items: center;
+}
+.img__img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: 5px solid #000;
+    border-radius: 100%;
+}
+.user {
+    margin-inline-start: 16px;
+    text-align: left;
+}
+.user__name {
+    font-size: 1.6rem;
+}
+.user__user-name {
+    font-size: .9rem;
+}
+.user__date {
+    font-size: .7rem;
+    opacity: .6;
+}
+.user__github-link {
+    width: .5rem;
+}
+
+.footer-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
