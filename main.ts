@@ -34,11 +34,34 @@ interface userInfoModel {
     date: string,
     location: string,
     site: string,
-    twiter: string
+    twiter: string,
+    github: string,
 }
 
 const showUserInfo = (userInfo: userInfoModel) => {
-    console.table(userInfo)
+    const userInforHTMLContainer = document.getElementById("userInformation")!;
+    userInforHTMLContainer.innerHTML = `
+    <header class="user-information">
+        <div class="img">
+            <img src="${userInfo.photo}" alt="" class="img__img">
+        </div>
+        <div class="user">
+            <p class="user__name nes-text is-primary">${userInfo.name}</p>
+            <p class="user__user-name">${userInfo.userName}</p>
+            <p class="user__date">${userInfo.date}</p>
+            <a href="${userInfo.github}" class="user__github-link"><i class="nes-icon github"></i></a>
+        </div>
+    </header>
+    <div class="lists">
+        <p>${userInfo.bio}</p>
+        <ul class="nes-list is-disc">
+        <li><a href="${userInfo.site}">Web</a></li>
+        <li>Location: ${userInfo.location}</li>
+        <li>Email: ${userInfo.email}</li>
+        <li>Twiter: ${userInfo.twiter}</li>
+        </ul>
+    </div>
+    `
 }
 
 // 
@@ -65,6 +88,7 @@ class Github {
     }
     private getUserInfo(URL , callback: Function) {
         fetch(URL).then( r => r.json()).then( userData => {
+            console.log(userData)
             userData = this.formatUserData(userData);
             callback(userData);
         })
@@ -77,7 +101,7 @@ class Github {
                 day:"numeric",
             })
         }
-        const { avatar_url, bio, blog, created_at, email, location, name, login, twitter_username } = userData;
+        const { avatar_url, bio, blog, created_at, email, location, name, login, twitter_username, html_url } = userData;
         const userInfo: userInfoModel = {
             photo: avatar_url,
             userName: `@${login}`,
@@ -86,8 +110,9 @@ class Github {
             date: formatDate(created_at || ""),
             location: (location || ""),
             email: (email || ""),
-            site: (blog || ""),
+            site: (blog || "#"),
             twiter: (twitter_username || ""),
+            github: html_url,
         }
         return userInfo
     }
